@@ -15,11 +15,11 @@ logo_url = "https://edit.armytenmiler.com/download_file/view_inline/397/"
 st.markdown(
     f"""
     <style>
-        .top-right-logo {{
+        .top-left-logo {{
             position: absolute;
             top: 10px;
-            right: 10px;
-            width: 100px; /* Adjust width for smaller size */
+            left: 10px;
+            width: 500px; /* Adjust width for smaller size */
         }}
     </style>
     <img class="top-right-logo" src="{logo_url}" alt="Guidehouse Logo">
