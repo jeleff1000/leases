@@ -105,4 +105,7 @@ else:
                 else:
                     users = new_user
                 users.to_parquet(user_file_path, index=False)
+                st.session_state.logged_in = True
+                st.session_state.user_email = email
                 st.success("Registration successful!")
+                st.rerun()  # Force rerun to reflect changes
