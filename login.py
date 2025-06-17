@@ -80,7 +80,7 @@ else:
                         st.session_state.logged_in = True
                         st.session_state.user_email = email
                         st.success("Login successful!")
-                        st.experimental_rerun()  # Force rerun to reflect changes
+                        st.rerun()  # Force rerun to reflect changes
                     else:
                         st.error("Invalid email or password.")
                 else:
