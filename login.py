@@ -11,7 +11,7 @@ if not os.path.exists(repository_path):
     os.makedirs(repository_path)
 
 # Set up the homepage
-st.title("Welcome to Guidehouse Lease Repository")
+st.title("Welcome to the Guidehouse Lease Repository")
 
 # Session state for login status
 if "logged_in" not in st.session_state:
