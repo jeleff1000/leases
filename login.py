@@ -19,7 +19,7 @@ st.markdown(
             position: absolute;
             top: 10px;
             left: 10px;
-            width: 150px; /* Adjust width for larger size */
+            width: 200px; /* Adjust width for larger size */
             margin-bottom: 20px; /* Add space below the logo */
         }}
     </style>
