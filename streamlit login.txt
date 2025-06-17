@@ -1,0 +1,5 @@
+cd C:\Users\joeye\OneDrive\Desktop\torahapp
+streamlit run streamlit_home.py
+
+
+
