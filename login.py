@@ -15,10 +15,10 @@ logo_url = "https://edit.armytenmiler.com/download_file/view_inline/397/"
 st.markdown(
     f"""
     <style>
-        .top-left-logo {{
+        .top-right-logo {{
             position: absolute;
             top: 10px;
-            left: 10px;
+            right: 10px;
             width: 100px; /* Adjust width for smaller size */
         }}
     </style>
