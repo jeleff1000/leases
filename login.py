@@ -10,10 +10,22 @@ repository_path = "file_repository"
 if not os.path.exists(repository_path):
     os.makedirs(repository_path)
 
-# Display the logo at the top
+# Display the logo at the top right
 logo_url = "https://edit.armytenmiler.com/download_file/view_inline/397/"
-st.image(logo_url, use_container_width=True)
-
+st.markdown(
+    f"""
+    <style>
+        .top-right-logo {{
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 100px; /* Adjust width for smaller size */
+        }}
+    </style>
+    <img class="top-right-logo" src="{logo_url}" alt="Guidehouse Logo">
+    """,
+    unsafe_allow_html=True
+)
 # Set up the homepage
 st.title("Welcome to the Guidehouse Lease Repository")
 
