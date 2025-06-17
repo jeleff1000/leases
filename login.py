@@ -10,22 +10,27 @@ repository_path = "file_repository"
 if not os.path.exists(repository_path):
     os.makedirs(repository_path)
 
-# Display the logo at the top right
+# Display the logo on the left with space below it
 logo_url = "https://edit.armytenmiler.com/download_file/view_inline/397/"
 st.markdown(
     f"""
     <style>
-        .top-right-logo {{
+        .left-logo {{
             position: absolute;
             top: 10px;
-            right: 10px;
-            width: 100px; /* Adjust width for smaller size */
+            left: 10px;
+            width: 150px; /* Adjust width for larger size */
+            margin-bottom: 20px; /* Add space below the logo */
         }}
     </style>
-    <img class="top-right-logo" src="{logo_url}" alt="Guidehouse Logo">
+    <img class="left-logo" src="{logo_url}" alt="Guidehouse Logo">
     """,
     unsafe_allow_html=True
 )
+
+# Add space between the logo and the title
+st.markdown("<div style='margin-top: 100px;'></div>", unsafe_allow_html=True)
+
 # Set up the homepage
 st.title("Welcome to the Guidehouse Lease Repository")
 
