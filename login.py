@@ -29,6 +29,7 @@ if st.session_state.logged_in:
         st.session_state.logged_in = False
         st.session_state.user_email = ""
         st.success("You have been logged out.")
+        st.experimental_rerun()  # Force rerun to reflect changes
 
     # Knowledge base dropdown
     st.subheader("Select Your Knowledge Base")
@@ -79,6 +80,7 @@ else:
                         st.session_state.logged_in = True
                         st.session_state.user_email = email
                         st.success("Login successful!")
+                        st.experimental_rerun()  # Force rerun to reflect changes
                     else:
                         st.error("Invalid email or password.")
                 else:
