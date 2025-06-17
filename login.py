@@ -24,6 +24,12 @@ if st.session_state.logged_in:
     user_name = st.session_state.user_email.split("@")[0]
     st.subheader(f"Welcome, {user_name}!")
 
+    # Log Out button
+    if st.button("Log Out"):
+        st.session_state.logged_in = False
+        st.session_state.user_email = ""
+        st.success("You have been logged out.")
+
     # Knowledge base dropdown
     st.subheader("Select Your Knowledge Base")
     knowledge_base = st.selectbox(
