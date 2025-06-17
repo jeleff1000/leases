@@ -19,7 +19,7 @@ st.markdown(
             position: absolute;
             top: 10px;
             left: 10px;
-            width: 500px; /* Adjust width for smaller size */
+            width: 300px; /* Adjust width for smaller size */
         }}
     </style>
     <img class="top-right-logo" src="{logo_url}" alt="Guidehouse Logo">
