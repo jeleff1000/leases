@@ -5,6 +5,7 @@ import os
 # File paths
 user_file_path = "users.parquet"
 repository_path = "file_repository"
+excel_file_path = os.path.join(os.path.dirname(__file__), "DLA LAAT.xlsx")  # Relative path to the Excel file
 
 # Ensure repository directory exists
 if not os.path.exists(repository_path):
@@ -79,6 +80,25 @@ if st.session_state.logged_in:
         with open(file_path, "wb") as f:
             f.write(uploaded_file.getbuffer())
         st.success(f"File '{uploaded_file.name}' uploaded successfully!")
+
+    # Excel Viewer Section
+    st.subheader("Excel Viewer")
+    try:
+        df = pd.read_excel(excel_file_path)  # Read the Excel file
+
+        # Set 'Doc Name' as the index
+        df = df.set_index('Doc Name')
+
+        # Format columns
+        df['Amount'] = df['Amount'].apply(lambda x: f"${x:,.2f}")  # Format as dollar figure
+        df['Discount'] = df['Discount'].apply(lambda x: f"{x:.2%}")  # Format as percentage
+
+        # Display DataFrame without index
+        st.dataframe(df.style.hide(axis="index"))
+    except FileNotFoundError:
+        st.error(f"Excel file not found at {excel_file_path}. Please ensure the file exists.")
+    except Exception as e:
+        st.error(f"An error occurred while reading the Excel file: {e}")
 
     # Chatbot section
     st.subheader("Chatbot")
